@@ -13,10 +13,10 @@ Implementación de las funcionalidades:
 Los algoritmos se encuentran dentro de la clase GrafoDinamic.
 Se provee un grafo dibujado en una imágen y el proyecto completo con código demo de este para su ejecución y prueba de cada algoritmo.
 
-### Grafo precargado 1 (DFS - BFS)
+### Grafo precargado 1 (Kruskal - Prim)
 ![Grafo](https://github.com/sebastianmedinao/TPO-PIII-MRI/blob/master/TPO-P3MRI/grafo.jpg)
 
-### Grafo precargado 2 (Kruskal - Prim)
+### Grafo precargado 2 (DFS - BFS)
 ![Grafo](https://github.com/sebastianmedinao/TPO-PIII-MRI/blob/master/TPO-P3MRI/grafo2.jpg)
 
 ## Algoritmo BFS
