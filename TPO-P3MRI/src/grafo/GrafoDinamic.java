@@ -6,6 +6,10 @@ public class GrafoDinamic implements GrafosTDA {
 	NodoGrafo nodo;
 	int cantidad;
 	private Queue<NodoGrafo> queue;
+	
+	static final int NO_VISITADO = 0;
+	static final int DESCUBIERTO = 1;
+	static final int VISITADO = 2;
 
 	public void inicializarGrafo(int dim) {
 		nodo = null;
@@ -191,27 +195,50 @@ public class GrafoDinamic implements GrafosTDA {
 		return grafos;			
 	}
 	
-	public void Ejecutar_DFS(int origen) { // Ejecución de algoritmo DFS
-		NodoGrafo aux = this.encontrarNodo(origen);
-		if (aux != null) {
-			DFS(aux);
-		}
+	private ArrayList<NodoGrafo> getVecinosDirigido(NodoGrafo n) {
+		NodoArista aux = new NodoArista();
+		ArrayList<NodoGrafo> grafos = new ArrayList<NodoGrafo>();
+		
+		aux = n.lista;
+		while (aux != null) {			
+			if (!grafos.contains(aux.v2)) grafos.add(aux.v2);		
+			aux = aux.sig;
+		}	
+		
+		return grafos;			
 	}
 	
-	private void DFS(NodoGrafo g) { // Recursión DFS
-		System.out.print(g.valor + " ");
+	public void Ejecutar_DFS(int origen) { // Ejecución de algoritmo DFS
+		NodoGrafo aux = this.encontrarNodo(origen);
+		Queue<Integer> cola = new LinkedList<Integer>();
+		int[] status = new int[cantidad+1];
+		if (aux != null) {
+			DFS(aux, cola, status);
+		}		
+	    while (!cola.isEmpty()) {
+			System.out.print(cola.remove() + ", ");
+		}
 		
-		ArrayList<NodoGrafo> vecinos = getVecinos(g);
+	}
+	
+	private void DFS(NodoGrafo g, Queue<Integer> cola, int[] status) { // Recursión DFS
+		//System.out.print(g.valor + " ");
 		
-		g.Visitado = true;
+		status[g.valor] = DESCUBIERTO;
+	
+		ArrayList<NodoGrafo> vecinos = getVecinosDirigido(g);
 		
 		vecinos.forEach((v) -> {
-			if (v != null && !v.Visitado) DFS(v);
+			if (status[v.valor] == NO_VISITADO)
+				DFS(v, cola, status);	
 		});
+		
+		status[g.valor] = VISITADO;
+		cola.add(g.valor);
 	}
 
 	public void Ejecutar_BFS(int origen) { // Ejecución de algoritmo BFS
-		NodoGrafo aux = this.encontrarNodo(origen);
+		NodoGrafo aux = this.encontrarNodo(origen);		
 		if (aux != null) {
 			queue = new LinkedList<NodoGrafo>();			
 			BFS(aux);
@@ -226,7 +253,7 @@ public class GrafoDinamic implements GrafosTDA {
 		while (!queue.isEmpty()) {
 			NodoGrafo aux = queue.remove();
 			
-			System.out.print(aux.valor + " ");
+			System.out.print(aux.valor + ", ");
 			
 			ArrayList<NodoGrafo> vecinos = getVecinos(aux);
 			

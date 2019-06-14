@@ -5,7 +5,7 @@ public class NodoArista implements Comparable<NodoArista>{
 	NodoArista sig;
 	NodoGrafo v1;
 	NodoGrafo v2;
-	boolean visitado;	
+	boolean visitado;
 	
 	public int compareTo(NodoArista aux) {
 		if(this.peso < aux.peso) {
