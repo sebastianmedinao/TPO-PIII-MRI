@@ -36,7 +36,7 @@ Impresión del resultado por consola.
 ## Algoritmo DFS
 
 El procedimiento es bastante similar al BFS pero con algunas diferencias para cumplir el requerimiento del descubrimiento en profundidad.
-En este caso no utilizo una cola. Al descubrir un nodo nuevo, busco sus vecinos y continuo iterando en sus vecinos de manera individual, y imprimo en consola el progreso a medida del avance.
+En este caso utilizo una cola y flags para indicar los nodos visitados. Al descubrir un nodo nuevo, busco sus vecinos y continuo iterando en sus vecinos de manera individual, y luego de la recurrencia los agrego a la cola. Al finalizar la iteración, imprimo en consola el resultado de la cola.
 
 ## Algoritmo Kruskal
 
@@ -52,3 +52,34 @@ Utilizo una cola común para el almacen de aristas que obtengo del nodo iterado,
 En el grafo resultado, agrego el vértice de origen, y cargo las aristas de este nodo. Comienza una iteración hasta que la cantidad de nodos del grafo resultante sea igual a la del grafo original.
 Agrego las aristas descubiertas a la cola de prioridad, la cual se ordena según el peso de la arista por el Comparator de la clase.
 Obtengo la primera arista de la cola prioridad y controlo si el nodo nuevo existe. Si existe, no hago nada. Si no existe, agrego el vértice al nuevo grafo y la arista, sumo el peso de la arista a un sumador del costo total, y procedo a setear el próximo nodo a descubrir como el nodo recién agregado.
+
+### Resultado en consola
+´´´
+/// DFS ///
+6, 7, 5, 4, 3, 8, 2, 1,  
+ 
+/// BFS ///
+1, 4, 3, 2, 6, 5, 8, 7,  
+ 
+/// KRUSKAL ///
+Arista agregada: 9-5 / Peso: 1
+Arista agregada: 2-1 / Peso: 1
+Arista agregada: 5-6 / Peso: 2
+Arista agregada: 8-9 / Peso: 2
+Arista agregada: 2-5 / Peso: 2
+Arista agregada: 3-4 / Peso: 3
+Arista agregada: 6-7 / Peso: 4
+Arista agregada: 4-7 / Peso: 4
+Costo minimo: 19
+ 
+/// PRIM ///
+Arista agregada: 1-2 / Peso: 1
+Arista agregada: 2-5 / Peso: 2
+Arista agregada: 5-9 / Peso: 1
+Arista agregada: 9-8 / Peso: 2
+Arista agregada: 5-6 / Peso: 2
+Arista agregada: 6-7 / Peso: 4
+Arista agregada: 7-4 / Peso: 4
+Arista agregada: 4-3 / Peso: 3
+Costo minimo: 19
+´´´
