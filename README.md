@@ -54,7 +54,7 @@ Agrego las aristas descubiertas a la cola de prioridad, la cual se ordena según
 Obtengo la primera arista de la cola prioridad y controlo si el nodo nuevo existe. Si existe, no hago nada. Si no existe, agrego el vértice al nuevo grafo y la arista, sumo el peso de la arista a un sumador del costo total, y procedo a setear el próximo nodo a descubrir como el nodo recién agregado.
 
 ### Resultado en consola
-´´´
+```
 /// DFS ///
 6, 7, 5, 4, 3, 8, 2, 1,  
  
@@ -82,4 +82,4 @@ Arista agregada: 6-7 / Peso: 4
 Arista agregada: 7-4 / Peso: 4
 Arista agregada: 4-3 / Peso: 3
 Costo minimo: 19
-´´´
+```
