@@ -27,7 +27,7 @@ public class Principal {
 		
 		g = new GrafoDinamic();		
 		g.inicializarGrafo(0);		
-		GrafoDemo.Precarga(g);
+		GrafoDemo.Precarga1(g);
 		System.out.println("/// KRUSKAL ///");	
 		g.Ejecutar_Kruskal();
 		
@@ -35,7 +35,7 @@ public class Principal {
 		
 		g = new GrafoDinamic();		
 		g.inicializarGrafo(0);		
-		GrafoDemo.Precarga(g);
+		GrafoDemo.Precarga1(g);
 		System.out.println("/// PRIM ///");	
 		g.Ejecutar_Prim(1);
 		

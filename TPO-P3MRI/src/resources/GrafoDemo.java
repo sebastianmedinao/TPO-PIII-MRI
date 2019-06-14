@@ -4,7 +4,7 @@ import grafo.GrafosTDA;
 
 public class GrafoDemo {
 	
-	public static void Precarga(GrafosTDA g) {
+	public static void Precarga1(GrafosTDA g) {
 		g.agregarVertice(1);
 		g.agregarVertice(2);
 		g.agregarVertice(3);
