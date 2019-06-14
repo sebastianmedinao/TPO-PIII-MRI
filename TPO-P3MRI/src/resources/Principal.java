@@ -9,7 +9,7 @@ public class Principal {
 		
 		GrafosTDA g = new GrafoDinamic();		
 		g.inicializarGrafo(0);		
-		GrafoDemo.Precarga(g);
+		GrafoDemo.Precarga2(g);
 		System.out.println("/// DFS ///");		
 		g.Ejecutar_DFS(1);
 		
@@ -18,7 +18,7 @@ public class Principal {
 		
 		g = new GrafoDinamic();		
 		g.inicializarGrafo(0);		
-		GrafoDemo.Precarga(g);
+		GrafoDemo.Precarga2(g);
 		System.out.println("/// BFS ///");		
 		g.Ejecutar_BFS(1);
 		

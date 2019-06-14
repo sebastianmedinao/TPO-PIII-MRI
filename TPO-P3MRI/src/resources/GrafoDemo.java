@@ -30,7 +30,25 @@ public class GrafoDemo {
 		g.agregarArista(8, 9, 2);
 		g.agregarArista(9, 5, 1);
 		
+	}
+	
+	public static void Precarga2(GrafosTDA g) {
+		g.agregarVertice(1);
+		g.agregarVertice(2);
+		g.agregarVertice(3);
+		g.agregarVertice(4);
+		g.agregarVertice(5);
+		g.agregarVertice(6);
+		g.agregarVertice(7);
+		g.agregarVertice(8);
 		
+		g.agregarArista(1, 2, 1);	
+		g.agregarArista(1, 3, 1);
+		g.agregarArista(1, 4, 1);
+		g.agregarArista(2, 8, 1);
+		g.agregarArista(4, 5, 1);
+		g.agregarArista(4, 6, 1);
+		g.agregarArista(5, 7, 1);
 		
 	}
 
